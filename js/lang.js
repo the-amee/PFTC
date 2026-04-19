@@ -2,8 +2,111 @@
 
 const LANG_STORAGE_KEY = 'sitePreferredLang';
 
+/** Production origin (HTTPS, no trailing slash). Update if the primary domain changes. */
+const SITE_ORIGIN = 'https://perfectfamilytc.com';
+
 /** Guards against out-of-order completion when language is switched quickly */
 let applyLangGeneration = 0;
+
+/**
+ * @param {'en'|'ar'} lang
+ */
+/**
+ * Absolute URL for same-origin assets (OG image, JSON-LD).
+ * @param {string} relativePath e.g. './assets/logo/logo.png'
+ */
+function absoluteAssetUrl(relativePath) {
+    try {
+        return new URL(relativePath, window.location.href).href;
+    } catch {
+        return relativePath;
+    }
+}
+
+/**
+ * Meta tags, Open Graph, Twitter, hreflang, canonical, JSON-LD — driven by data/*.json (extend keys anytime).
+ * @param {Record<string, string>} data
+ * @param {'en'|'ar'} clean
+ */
+function applySeoFromData(data, clean) {
+    const title = data.page_title || document.title;
+    const desc = data.seo_meta_description || '';
+    const keywords = data.seo_meta_keywords || '';
+    const siteName = data.seo_og_site_name || title;
+    const phone = data.seo_business_phone || '+966502890356';
+
+    const enPageUrl = `${SITE_ORIGIN}/`;
+    const arPageUrl = `${SITE_ORIGIN}/ar.html`;
+    const path = window.location.pathname || '/';
+    const isArHtml = /ar\.html$/i.test(path);
+    /** Canonical matches this HTML file (language toggle does not change URL). */
+    const canonicalUrl = isArHtml ? arPageUrl : enPageUrl;
+    const ogImage = `${SITE_ORIGIN}/assets/logo/logo.png`;
+
+    const setMetaName = (name, content) => {
+        const el = document.querySelector(`meta[name="${name}"]`);
+        if (el && content) el.setAttribute('content', content);
+    };
+    const setMetaProperty = (prop, content) => {
+        const el = document.querySelector(`meta[property="${prop}"]`);
+        if (el && content !== undefined && content !== null) el.setAttribute('content', content);
+    };
+
+    setMetaName('description', desc);
+    setMetaName('keywords', keywords);
+    setMetaProperty('og:title', title);
+    setMetaProperty('og:description', desc);
+    setMetaProperty('og:site_name', siteName);
+    setMetaProperty('og:url', canonicalUrl);
+    setMetaProperty('og:image', ogImage);
+    setMetaProperty('og:locale', clean === 'ar' ? 'ar_SA' : 'en_SA');
+    setMetaName('twitter:title', title);
+    setMetaName('twitter:description', desc);
+    setMetaName('twitter:image', ogImage);
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+    const hlEn = document.querySelector('link[hreflang="en-SA"]');
+    const hlAr = document.querySelector('link[hreflang="ar-SA"]');
+    const hlDef = document.querySelector('link[hreflang="x-default"]');
+    if (hlEn) hlEn.setAttribute('href', enPageUrl);
+    if (hlAr) hlAr.setAttribute('href', arPageUrl);
+    if (hlDef) hlDef.setAttribute('href', enPageUrl);
+
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'GroceryStore',
+        name: title,
+        description: desc,
+        url: canonicalUrl,
+        telephone: phone,
+        image: ogImage,
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: data.address || '',
+            addressLocality: 'Riyadh',
+            addressRegion: 'Riyadh',
+            addressCountry: 'SA',
+        },
+        geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 24.630962,
+            longitude: 46.692184,
+        },
+        openingHoursSpecification: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '08:00',
+            closes: '23:00',
+        },
+    };
+
+    const ldEl = document.getElementById('seo-jsonld');
+    if (ldEl) {
+        ldEl.textContent = JSON.stringify(jsonLd);
+    }
+}
 
 /**
  * @param {'en'|'ar'} lang
@@ -61,6 +164,8 @@ async function applySiteLanguage(lang) {
         document.title = data.page_title;
     }
 
+    applySeoFromData(data, clean);
+
     try {
         localStorage.setItem(LANG_STORAGE_KEY, clean);
     } catch (e) {
@@ -109,3 +214,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.applySiteLanguage = applySiteLanguage;
 window.LANG_STORAGE_KEY = LANG_STORAGE_KEY;
+window.SITE_ORIGIN = SITE_ORIGIN;

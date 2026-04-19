@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Family Trading Company</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/logo/logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/logo/logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/logo/logo.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./assets/logo/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/logo/logo.png">
+    
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="./css/styles.css?v=2">
+    <script src="./js/lang.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+    <!-- =========================================
+         HEADER 
+         ========================================= -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="./assets/logo/logo.png" alt="Perfect Family Trading Company">
+                <span style="margin-left: -15px; font-weight: bold; font-size: 1.2rem;">MiniSupermarket</span>
+            </a>
+            
+            <div class="nav-right">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#about" data-i18n="nav_about">About</a></li>
+                        <li><a href="#categories" data-i18n="nav_categories">Categories</a></li>
+                        <li><a href="#offers" data-i18n="nav_offers">Offers</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="ar.html" class="lang-toggle">عربي</a>
+            </div>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================
+         HERO SECTION
+         ========================================= -->
+    <section id="home" class="hero">
+        <img class="hero-bg" src="./assets/images/hero_compressed.png" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title" data-i18n="hero_heading">Perfect Family Fresh Vegetables</h1>
+            <p class="hero-subtitle" data-i18n="hero_subheading">Fresh | Quality | Trust</p>
+            <div class="hero-actions">
+                <a href="tel:+966500000000" class="btn btn-primary">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+                    <span data-i18n="btn_call">Call Now</span>
+                </a>
+                <a href="https://wa.me/966500000000" class="btn btn-outline" target="_blank">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+                    <span data-i18n="btn_whatsapp">WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- =========================================
+         ABOUT SECTION
+         ========================================= -->
+    <section id="about" class="about section-padding">
+        <div class="container about-content">
+            <h2 class="section-title" data-i18n="about_title">About Us</h2>
+            <p class="about-text" data-i18n="about_text">Mini Supermarket, operated by Perfect Trading Company, has been serving the community since 2006.</p>
+        </div>
+    </section>
+
+    <!-- =========================================
+         CATEGORIES SECTION
+         ========================================= -->
+   <section id="categories" class="categories section-padding bg-secondary">
+    <div class="container">
+        <h2 class="section-title text-center" style="margin-bottom: 40px;">
+            Our Categories
+        </h2>
+
+        <div class="categories-grid">
+
+            <!-- 1 -->
+            <a href="#" class="category-card" aria-label="Fresh Vegetables">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/veggies_compressed.png" alt="Fresh Vegetables" loading="lazy">
+                </div>
+                <h3 class="category-title">Fresh Vegetables</h3>
+            </a>
+
+            <!-- 2 -->
+            <a href="#" class="category-card" aria-label="Fresh Fruits">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/fruits_compressed.png" alt="Fresh Fruits" loading="lazy">
+                </div>
+                <h3 class="category-title">Fresh Fruits</h3>
+            </a>
+
+            <!-- 3 -->
+            <a href="#" class="category-card" aria-label="Dairy & Eggs">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/eggandmilk_compressed.png" alt="Dairy & Eggs" loading="lazy">
+                </div>
+                <h3 class="category-title">Dairy & Eggs</h3>
+            </a>
+
+            <!-- 4 -->
+            <a href="#" class="category-card" aria-label="Bakery Products">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/bakery_compressed.png" alt="Bakery Products" loading="lazy">
+                </div>
+                <h3 class="category-title">Bakery Products</h3>
+            </a>
+
+            <!-- 5 -->
+            <a href="#" class="category-card" aria-label="Grocery & Staples">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/grocery_compressed.png" alt="Grocery & Staples" loading="lazy">
+                </div>
+                <h3 class="category-title">Grocery & Staples</h3>
+            </a>
+
+            <!-- 6 -->
+            <a href="#" class="category-card" aria-label="Meat & Seafood">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/fishandmeat_compressed.png" alt="Meat & Seafood" loading="lazy">
+                </div>
+                <h3 class="category-title">Meat & Seafood</h3>
+            </a>
+
+            <!-- 7 -->
+            <a href="#" class="category-card" aria-label="Personal Care">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/personalcare_compressed.png" alt="Personal Care" loading="lazy">
+                </div>
+                <h3 class="category-title">Personal Care</h3>
+            </a>
+
+            <!-- 8 -->
+            <a href="#" class="category-card" aria-label="Household">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/householdblue_compressed.png" alt="Household" loading="lazy">
+                </div>
+                <h3 class="category-title">Household</h3>
+            </a>
+
+            <!-- 9 -->
+            <a href="#" class="category-card" aria-label="Footwear">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/footwear_compressed.png" alt="Footwear" loading="lazy">
+                </div>
+                <h3 class="category-title">Footwear</h3>
+            </a>
+
+            <!-- 10 -->
+            <a href="#" class="category-card" aria-label="Pet Supplies">
+                <div class="category-image-wrap">
+                    <img src="./assets/images/categories/cateatingfood_compressed.png" alt="Pet Supplies" loading="lazy">
+                </div>
+                <h3 class="category-title">Pet Supplies</h3>
+            </a>
+
+        </div>
+    </div>
+</section>
+    <!-- =========================================
+         FEATURES SECTION
+         ========================================= -->
+    <section class="features section-padding">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-media">
+                    <img src="./assets/images/shop_image%20(1).png" alt="" width="1536" height="1024" loading="lazy" decoding="async">
+                </div>
+                <div class="about-copy features-copy">
+                    <h2 class="section-title" data-i18n="features_title">Why Choose Us</h2>
+                    <ul class="features-points" role="list">
+                        <li>
+                            <img class="features-points__icon" src="./assets/images/delivery.com%20(3).png" alt="" width="48" height="48" loading="lazy" decoding="async">
+                            <div class="features-points__text">
+                                <span class="features-points__title" data-i18n="feat_delivery_title">15-Min Home Delivery</span>
+                                <span class="features-points__desc" data-i18n="feat_delivery_desc">Fast and reliable delivery to your doorstep</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="features-points__icon" src="./assets/images/halal.com%20(3).png" alt="" width="48" height="48" loading="lazy" decoding="async">
+                            <div class="features-points__text">
+                                <span class="features-points__title" data-i18n="feat_halal_title">100% Halal Products</span>
+                                <span class="features-points__desc" data-i18n="feat_halal_desc">Trusted quality, meeting all halal standards</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="features-points__icon" src="./assets/images/park.com%20(5).png" alt="" width="48" height="48" loading="lazy" decoding="async">
+                            <div class="features-points__text">
+                                <span class="features-points__title" data-i18n="feat_parking_title">Spacious Parking</span>
+                                <span class="features-points__desc" data-i18n="feat_parking_desc">Easy and hassle-free parking for all customers</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="features-points__icon" src="./assets/images/trust.com%20(10).png" alt="" width="48" height="48" loading="lazy" decoding="async">
+                            <div class="features-points__text">
+                                <span class="features-points__title" data-i18n="feat_since_title">Loved Since 2006</span>
+                                <span class="features-points__desc" data-i18n="feat_since_desc">Serving the local community for nearly two decades</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="features-points__icon" src="./assets/images/cart.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+                            <div class="features-points__text">
+                                <span class="features-points__title" data-i18n="feat_oneplace_title">Everything in One Place</span>
+                                <span class="features-points__desc" data-i18n="feat_oneplace_desc">Groceries, fresh items, daily needs—all under one roof</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="features-points__icon" src="./assets/images/shopsize.com%20(8).png" alt="" width="48" height="48" loading="lazy" decoding="async">
+                            <div class="features-points__text">
+                                <span class="features-points__title" data-i18n="feat_store_title">3000+ Sqft Store</span>
+                                <span class="features-points__desc" data-i18n="feat_store_desc">Comfortable shopping experience with wide aisles</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         OFFERS SECTION
+         ========================================= -->
+    <section id="offers" class="offers section-padding bg-secondary">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="offers_title">Today's Deals</h2>
+            <div class="offers-grid">
+                <!-- Offer 1 -->
+                <div class="offer-card glass-panel offer-bg-1">
+                    <h3 class="offer-title" data-i18n="offer_1">20% off on all fresh fruits</h3>
+                    <p>Limited time offer. Terms apply.</p>
+                </div>
+                <!-- Offer 2 -->
+                <div class="offer-card glass-panel offer-bg-2">
+                    <h3 class="offer-title" data-i18n="offer_2">Buy 1 Get 1 Free on selected dairy</h3>
+                    <p>Available in store only.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         CONTACT SECTION
+         ========================================= -->
+    <section id="contact" class="contact section-padding bg-white">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="contact_title">Contact Us</h2>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <!-- Phone -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact_phone">Phone</h4>
+                            <a href="tel:+966500000000">+966 50 000 0000</a>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact_email">Email</h4>
+                            <a href="mailto:info@perfectfamily.com">info@perfectfamily.com</a>
+                        </div>
+                    </div>
+                    <!-- Timings -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact_timing">Store Timings</h4>
+                            <p data-i18n="timing_text">8:00 AM - 11:00 PM Daily</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115858.9142721!2d46.745672!3d24.843657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efd2fbf00e4cd%3A0xcfd6dc771c990b7a!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer_text">&copy; 2026 Perfect Family Trading Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

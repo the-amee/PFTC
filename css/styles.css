@@ -1,4 +1,5 @@
 /* css/styles.css */
+
 :root {
     --color-primary: #1b4332;
     --color-primary-light: #2d6a4f;
@@ -25,20 +26,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-/* TYPOGRAPHY */
+/* TYPOGRAPHY — Poppins for body, headings, UI, and logo wordmark */
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-}
-
-/* LTR Default */
-html[dir="ltr"] {
-    font-family: 'Inter', 'Poppins', sans-serif;
-}
-
-/* RTL Override */
-html[dir="rtl"] {
-    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -170,10 +162,71 @@ a {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.header .container {
+.header .container,
+.header .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: none;
+    width: 100%;
+    /* Logo flush to viewport start; safe area on notched devices */
+    padding-inline-start: max(0px, env(safe-area-inset-left));
+    padding-inline-end: max(20px, env(safe-area-inset-right));
+}
+
+.header-inner {
+    gap: 12px;
+}
+
+/* Mobile: flag + hamburger (hidden on desktop via media query) */
+.header-mobile-tools {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-inline-start: auto;
+}
+
+.lang-switch-mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lang-switch-mobile:hover {
+    opacity: 0.92;
+    transform: scale(1.04);
+}
+
+.lang-switch-mobile:active {
+    transform: scale(0.94);
+    opacity: 0.88;
+}
+
+.header.scrolled .lang-switch-mobile {
+    background: rgba(27, 67, 50, 0.08);
+}
+
+.lang-switch-mobile__icon {
+    font-size: 1.35rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
+@media (min-width: 769px) {
+    .header-mobile-tools {
+        display: none !important;
+    }
 }
 
 .logo {
@@ -182,6 +235,15 @@ a {
     gap: 0;
     font-weight: 700;
     font-size: 1.25rem;
+}
+
+.logo-wordmark {
+    font-weight: 700;
+    font-size: 1.12rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    /* Pull wordmark tight against the mark (logo PNG includes padding) */
+    margin-inline-start: -18px;
 }
 
 .logo img {
@@ -324,6 +386,8 @@ html[dir="rtl"] .nav-links a::after {
     max-width: 800px;
     width: 100%;
     text-align: center;
+    /* Move hero headline + subtitle + buttons down from vertical center: edit margin-top */
+    margin-top: 200px;
 }
 
 .hero-title {
@@ -731,45 +795,139 @@ html[dir="rtl"] .category-scroll-content {
 }
 
 /* -------------------------------------
-   OFFERS SECTION
+   FAQ SECTION (mobile-first accordion)
 ------------------------------------- */
-.offers-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+.faq .section-title {
+    margin-bottom: 1.5rem;
 }
 
-.offer-card {
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    position: relative;
-    overflow: hidden;
+.faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 42rem;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.faq-item {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(27, 67, 50, 0.08);
+    overflow: hidden;
+    transition: box-shadow 0.25s ease;
+}
+
+.faq-item.is-open {
+    box-shadow: var(--shadow-hover);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    color: var(--color-text-dark);
+    text-align: start;
+    min-height: 3.25rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.faq-question:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.faq-question-text {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.faq-icon-wrap {
+    flex-shrink: 0;
+    margin-inline-start: auto;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    min-height: 200px;
-}
-
-.offer-bg-1 {
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-    border: 1px solid rgba(46, 125, 50, 0.1);
-}
-
-.offer-bg-2 {
-    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
-    border: 1px solid rgba(255, 160, 0, 0.1);
-}
-
-.offer-title {
-    font-size: 1.75rem;
-    font-weight: 700;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(27, 67, 50, 0.08);
     color: var(--color-primary);
-    margin-bottom: 12px;
 }
 
-.offer-card p {
+.faq-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.35s ease;
+}
+
+.faq-item.is-open .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.38s ease;
+}
+
+.faq-item.is-open .faq-answer-panel {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.faq-answer-inner p {
+    margin: 0;
+    padding: 0 16px 16px;
+    font-size: 0.95rem;
+    line-height: 1.65;
     color: var(--color-text-light);
-    font-size: 1.05rem;
+}
+
+.faq-item.is-open .faq-answer-inner {
+    border-top: 1px solid rgba(27, 67, 50, 0.08);
+}
+
+.faq-item.is-open .faq-answer-inner p {
+    padding-top: 12px;
+}
+
+@media (min-width: 768px) {
+    .faq .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .faq-list {
+        gap: 12px;
+    }
+
+    .faq-question {
+        padding: 18px 22px;
+    }
+
+    .faq-answer-inner p {
+        padding: 0 22px 20px;
+        font-size: 1.02rem;
+    }
+
+    .faq-item.is-open .faq-answer-inner p {
+        padding-top: 14px;
+    }
 }
 
 /* -------------------------------------
@@ -897,6 +1055,19 @@ html[dir="rtl"] .category-scroll-content {
     }
     
     /* Mobile Menu styles */
+    .header-mobile-tools {
+        display: flex;
+    }
+
+    .lang-switch-mobile {
+        display: flex;
+    }
+
+    /* Icon-only switch in bar; desktop text links stay in .nav-right on larger screens */
+    .nav-right > .lang-toggle {
+        display: none !important;
+    }
+
     .menu-toggle { display: flex; }
     
     .nav-right {
@@ -959,7 +1130,6 @@ html[dir="rtl"] .category-scroll-content {
     
     .categories-grid { grid-template-columns: repeat(2, 1fr); }
     
-    .offers-grid { grid-template-columns: 1fr; }
     
     .contact-info { padding: 40px 30px; }
     .contact-item { flex-direction: column; align-items: center; text-align: center; gap: 12px; }
@@ -967,8 +1137,6 @@ html[dir="rtl"] .category-scroll-content {
 
 @media (max-width: 480px) {
     .hero-title { font-size: 2.25rem; }
-    
-    .categories-grid { grid-template-columns: 1fr; }
     
     .offer-card { padding: 30px 20px; }
     .offer-title { font-size: 1.5rem; }

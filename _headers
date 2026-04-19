@@ -1,0 +1,14 @@
+# Netlify (and similar static hosts): long cache for hashed/static assets.
+# Adjust or remove if you deploy elsewhere.
+
+/assets/*
+  Cache-Control: public, max-age=2592000
+
+/css/*
+  Cache-Control: public, max-age=86400
+
+/js/*
+  Cache-Control: public, max-age=86400
+
+/data/*
+  Cache-Control: public, max-age=86400

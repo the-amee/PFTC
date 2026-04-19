@@ -1,12 +1,9 @@
 {
   "name": "perfect-family-site",
   "version": "1.0.0",
-  "description": "MiniSupermarket project",
-  "main": "index.html",
+  "private": true,
+  "description": "Static site (HTML/CSS/JS). No npm dependencies.",
   "scripts": {
-    "dev": "live-server --port=3000"
-  },
-  "devDependencies": {
-    "live-server": "^1.2.2"
+    "dev": "python3 -m http.server 3000"
   }
 }

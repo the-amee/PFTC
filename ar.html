@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شركة العائلة المثالية للتجارة</title>
-    <link rel="icon" type="image/png" sizes="512x512" href="./assets/logo/logo.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/logo/logo.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./assets/logo/logo.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="./assets/logo/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/logo/logo.png">
-    
-    <!-- Preload Fonts -->
+    <link rel="icon" href="./assets/images/supermarket_logo_figma.svg" type="image/svg+xml" sizes="any">
+    <link rel="icon" href="./assets/images/fevicon_minisupermarket.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/fevicon_minisupermarket.png">
+
+    <link rel="preload" as="image" href="./assets/images/new_hero%20(1).png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS and JS -->
-    <link rel="stylesheet" href="./css/styles.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/styles.css?v=3">
     <script src="./js/lang.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -27,10 +24,10 @@
          HEADER 
          ========================================= -->
     <header class="header">
-        <div class="container">
+        <div class="container header-inner">
             <a href="#" class="logo">
-                <img src="./assets/logo/logo.png" alt="شركة العائلة المثالية للتجارة">
-                <span style="margin-right: -15px; font-weight: bold; font-size: 1.2rem;">MiniSupermarket</span>
+                <img src="./assets/logo/logo.png" alt="شركة العائلة المثالية للتجارة" width="70" height="70" decoding="async">
+                <span class="logo-wordmark" data-i18n="logo_wordmark">بيرفكت فاميلي</span>
             </a>
             
             <div class="nav-right">
@@ -39,17 +36,22 @@
                         <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
                         <li><a href="#about" data-i18n="nav_about">من نحن</a></li>
                         <li><a href="#categories" data-i18n="nav_categories">الأقسام</a></li>
-                        <li><a href="#offers" data-i18n="nav_offers">العروض</a></li>
+                        <li><a href="#faq" data-i18n="nav_offers">الأسئلة الشائعة</a></li>
                         <li><a href="#contact" data-i18n="nav_contact">اتصل بنا</a></li>
                     </ul>
                 </nav>
-                <a href="index.html" class="lang-toggle">English</a>
+                <a href="index.html" class="lang-toggle" data-i18n="lang_toggle_label">English</a>
             </div>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-mobile-tools">
+                <button type="button" class="lang-switch-mobile" aria-label="Switch Language">
+                    <span class="lang-switch-mobile__icon" aria-hidden="true">🇬🇧</span>
+                </button>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -58,17 +60,17 @@
          HERO SECTION
          ========================================= -->
     <section id="home" class="hero">
-        <img class="hero-bg" src="./assets/images/hero_compressed.png" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+        <img class="hero-bg" src="./assets/images/new_hero%20(1).png" alt="" width="1264" height="848" sizes="100vw" decoding="async" fetchpriority="high">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1 class="hero-title" data-i18n="hero_heading">خضروات العائلة المثالية الطازجة</h1>
+            <h1 class="hero-title" data-i18n="hero_heading">خيارات طازجة لكل منزل</h1>
             <p class="hero-subtitle" data-i18n="hero_subheading">طزاجة | جودة | ثقة</p>
             <div class="hero-actions">
-                <a href="tel:+966500000000" class="btn btn-primary">
+                <a href="tel:+966547276948" class="btn btn-primary">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
                     <span data-i18n="btn_call">اتصل الآن</span>
                 </a>
-                <a href="https://wa.me/966500000000" class="btn btn-outline" target="_blank">
+                <a href="https://wa.me/966547276948" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
                     <span data-i18n="btn_whatsapp">واتساب</span>
                 </a>
@@ -84,7 +86,15 @@
     <section id="about" class="about section-padding">
         <div class="container about-content">
             <h2 class="section-title" data-i18n="about_title">من نحن</h2>
-            <p class="about-text" data-i18n="about_text">ميني سوبرماركت، بإدارة شركة بيرفكت للتجارة، يخدم المجتمع منذ عام ٢٠٠٦.</p>
+            <p class="about-text" data-i18n="about_text">سوبرماركت العائلة المثالية، بإدارة شركة العائلة المثالية للتجارة، يخدم المجتمع بفخر منذ عام ٢٠٠٦.
+
+محليًا، نُعرف على نطاق واسع باسم ميني سوبرماركت، متجر حي موثوق للاحتياجات اليومية.
+
+نقدم مجموعة منتقاة بعناية من الأساسيات اليومية، تشمل خضروات طازجة، لحوم وأسماك ممتازة، بقالة، ومستلزمات مطبخ، كل ذلك في مكان واحد.
+
+مع تركيز قوي على الجودة والتنوع والراحة، نجعل تسوقك اليومي بسيطًا وموثوقًا.
+
+كل ما تحتاجه في مكان واحد. خيار طازج لكل منزل.</p>
         </div>
     </section>
 
@@ -97,74 +107,74 @@
             
             <div class="categories-grid">
                 <!-- Category 1 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_veg" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/veggies_compressed.png" alt="Fresh Vegetables" loading="lazy">
+                        <img src="./assets/images/categories/veggies_compressed.png" data-i18n-alt="cat_veg" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_veg">Fresh Vegetables</h3>
+                    <h3 class="category-title" data-i18n="cat_veg">خضروات طازجة</h3>
                 </a>
                 <!-- Category 2 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_fruits" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/fruits_compressed.png" alt="Fresh Fruits" loading="lazy">
+                        <img src="./assets/images/categories/fruits_compressed.png" data-i18n-alt="cat_fruits" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_fruits">Fresh Fruits</h3>
+                    <h3 class="category-title" data-i18n="cat_fruits">فواكه طازجة</h3>
                 </a>
                 <!-- Category 3 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_dairy" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/eggandmilk_compressed.png" alt="Dairy & Eggs" loading="lazy">
+                        <img src="./assets/images/categories/eggandmilk_compressed.png" data-i18n-alt="cat_dairy" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_dairy">Dairy & Eggs</h3>
+                    <h3 class="category-title" data-i18n="cat_dairy">ألبان وبيض</h3>
                 </a>
                 <!-- Category 4 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_bakery" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/bakery_compressed.png" alt="Bakery Products" loading="lazy">
+                        <img src="./assets/images/categories/bakery_compressed.png" data-i18n-alt="cat_bakery" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_bakery">Bakery Products</h3>
+                    <h3 class="category-title" data-i18n="cat_bakery">منتجات المخابز</h3>
                 </a>
                 <!-- Category 5 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_grocery" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/grocery_compressed.png" alt="Grocery & Staples" loading="lazy">
+                        <img src="./assets/images/categories/grocery_compressed.png" data-i18n-alt="cat_grocery" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_grocery">Grocery & Staples</h3>
+                    <h3 class="category-title" data-i18n="cat_grocery">بقالة ومواد أساسية</h3>
                 </a>
                 <!-- Category 6 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_meat" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/fishandmeat_compressed.png" alt="Meat & Seafood" loading="lazy">
+                        <img src="./assets/images/categories/fishandmeat_compressed.png" data-i18n-alt="cat_meat" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_meat">Meat & Seafood</h3>
+                    <h3 class="category-title" data-i18n="cat_meat">لحوم ومأكولات بحرية</h3>
                 </a>
                 <!-- Category 7 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_personal" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/personalcare_compressed.png" alt="Personal Care" loading="lazy">
+                        <img src="./assets/images/categories/personalcare_compressed.png" data-i18n-alt="cat_personal" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_personal">Personal Care</h3>
+                    <h3 class="category-title" data-i18n="cat_personal">العناية الشخصية</h3>
                 </a>
                 <!-- Category 8 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_household" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/householdblue_compressed.png" alt="Household" loading="lazy">
+                        <img src="./assets/images/categories/householdblue_compressed.png" data-i18n-alt="cat_household" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_household">Household</h3>
+                    <h3 class="category-title" data-i18n="cat_household">أدوات منزلية</h3>
                 </a>
                 <!-- Category 9 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_footwear" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/footwear_compressed.png" alt="Footwear" loading="lazy">
+                        <img src="./assets/images/categories/footwear_compressed.png" data-i18n-alt="cat_footwear" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_footwear">Footwear</h3>
+                    <h3 class="category-title" data-i18n="cat_footwear">أحذية</h3>
                 </a>
                 <!-- Category 10 -->
-                <a href="#categories" class="category-card">
+                <a href="#categories" class="category-card" data-i18n-aria="cat_pet" aria-label="">
                     <div class="category-image-wrap">
-                        <img src="./assets/images/categories/cateatingfood_compressed.png" alt="Pet Supplies" loading="lazy">
+                        <img src="./assets/images/categories/cateatingfood_compressed.png" data-i18n-alt="cat_pet" alt="" loading="lazy">
                     </div>
-                    <h3 class="category-title" data-i18n="cat_pet">Pet Supplies</h3>
+                    <h3 class="category-title" data-i18n="cat_pet">مستلزمات الحيوانات الأليفة</h3>
                 </a>
             </div>
         </div>
@@ -214,7 +224,7 @@
                             <img class="features-points__icon" src="./assets/images/cart.png" alt="" width="48" height="48" loading="lazy" decoding="async">
                             <div class="features-points__text">
                                 <span class="features-points__title" data-i18n="feat_oneplace_title">كل شيء في مكان واحد</span>
-                                <span class="features-points__desc" data-i18n="feat_oneplace_desc">بقالة، طازج، احتياجات يومية—تحت سقف واحد</span>
+                                <span class="features-points__desc" data-i18n="feat_oneplace_desc">بقالة، طازج، احتياجات يومية-تحت سقف واحد</span>
                             </div>
                         </li>
                         <li>
@@ -231,21 +241,101 @@
     </section>
 
     <!-- =========================================
-         OFFERS SECTION
+         FAQ SECTION
          ========================================= -->
-    <section id="offers" class="offers section-padding bg-secondary">
+    <section id="faq" class="faq section-padding bg-secondary">
         <div class="container">
-            <h2 class="section-title text-center" data-i18n="offers_title">عروض اليوم</h2>
-            <div class="offers-grid">
-                <!-- Offer 1 -->
-                <div class="offer-card glass-panel offer-bg-1">
-                    <h3 class="offer-title" data-i18n="offer_1">خصم 20% على جميع الفواكه الطازجة</h3>
-                    <p>عرض لفترة محدودة. تطبق الشروط.</p>
+            <h2 class="section-title text-center" data-i18n="faq_title">الأسئلة الشائعة</h2>
+            <div class="faq-list" role="list">
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">
+                        <span class="faq-question-text" data-i18n="faq_1_q">هل تقدمون توصيلاً منزلياً؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_1_a">نعم، نوفر توصيلاً منزلياً مجاناً للطلبات المؤهلة.</p></div>
+                    </div>
                 </div>
-                <!-- Offer 2 -->
-                <div class="offer-card glass-panel offer-bg-2">
-                    <h3 class="offer-title" data-i18n="offer_2">اشتر 1 واحصل على 1 مجانًا على ألبان مختارة</h3>
-                    <p>متوفر في المتجر فقط.</p>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+                        <span class="faq-question-text" data-i18n="faq_2_q">كم يستغرق التوصيل؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_2_a">عادةً بين 15–20 دقيقة حسب موقعك.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+                        <span class="faq-question-text" data-i18n="faq_3_q">ما الحد الأدنى للطلب للتوصيل؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_3_a">قد يختلف الحد الأدنى حسب موقعك.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+                        <span class="faq-question-text" data-i18n="faq_4_q">ما طرق الدفع المتاحة؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_4_a">نقبل النقد، بطاقات الخصم والائتمان، مدى، وApple Pay.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+                        <span class="faq-question-text" data-i18n="faq_5_q">هل جميع منتجاتكم حلال؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_5_a">نعم، نقدم منتجات حلال 100٪ فقط.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6">
+                        <span class="faq-question-text" data-i18n="faq_6_q">هل يمكن الإرجاع؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_6_a">نعم، نقبل الإرجاع للعناصر التالفة أو الخاطئة.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-7" id="faq-btn-7">
+                        <span class="faq-question-text" data-i18n="faq_7_q">هل يمكن إلغاء الطلب بعد تأكيده؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_7_a">نعم، يُسمح بالإلغاء قبل شحن الطلب.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-8" id="faq-btn-8">
+                        <span class="faq-question-text" data-i18n="faq_8_q">ما أوقات عمل المتجر؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_8_a">المتجر مفتوح يومياً من 8:00 صباحاً إلى 11:00 مساءً.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-9" id="faq-btn-9">
+                        <span class="faq-question-text" data-i18n="faq_9_q">هل لديكم عروض أو خصومات؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-9" role="region" aria-labelledby="faq-btn-9" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_9_a">نعم، نقدم عروضاً وخصومات بشكل منتظم.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-10" id="faq-btn-10">
+                        <span class="faq-question-text" data-i18n="faq_10_q">ماذا إذا نفد المخزون؟</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-10" role="region" aria-labelledby="faq-btn-10" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_10_a">سنُعلمك ونقترح بدائل أو نصدر استرداداً.</p></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -267,7 +357,7 @@
                         </div>
                         <div class="contact-text">
                             <h4 data-i18n="contact_phone">الهاتف</h4>
-                            <a href="tel:+966500000000">+966 50 000 0000</a>
+                            <a href="tel:+966547276948">+966 54 727 6948</a>
                         </div>
                     </div>
                     <!-- Email -->
@@ -277,7 +367,17 @@
                         </div>
                         <div class="contact-text">
                             <h4 data-i18n="contact_email">البريد الإلكتروني</h4>
-                            <a href="mailto:info@perfectfamily.com">info@perfectfamily.com</a>
+                            <a href="mailto:perfectfamilytradingcos@gmail.com">perfectfamilytradingcos@gmail.com</a>
+                        </div>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact_instagram">إنستغرام</h4>
+                            <a href="https://www.instagram.com/perfectfamilytrading?igsh=N3VrZWEwa3A3ZXZ5" target="_blank" rel="noopener noreferrer">@perfectfamilytrading</a>
                         </div>
                     </div>
                     <!-- Timings -->

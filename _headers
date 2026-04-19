@@ -1,5 +1,4 @@
-# Netlify (and similar static hosts): long cache for hashed/static assets.
-# Adjust or remove if you deploy elsewhere.
+# Netlify only — Vercel uses vercel.json in this repo.
 
 /assets/*
   Cache-Control: public, max-age=2592000

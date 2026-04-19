@@ -32,7 +32,8 @@ async function applySiteLanguage(lang) {
         return;
     }
 
-    document.documentElement.setAttribute('lang', clean);
+    /* BCP 47: Saudi locale (primary audience) — storage/API still use "en" / "ar" */
+    document.documentElement.setAttribute('lang', clean === 'ar' ? 'ar-SA' : 'en-SA');
     document.documentElement.setAttribute('dir', clean === 'ar' ? 'rtl' : 'ltr');
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {

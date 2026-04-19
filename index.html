@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/styles.css?v=3">
+    <link rel="stylesheet" href="./css/styles.css?v=4">
     <script src="./js/lang.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -67,11 +67,11 @@
             <h1 class="hero-title" data-i18n="hero_heading">Fresh Choices For Every Home</h1>
             <p class="hero-subtitle" data-i18n="hero_subheading">Fresh | Quality | Trust</p>
             <div class="hero-actions">
-                <a href="tel:+966547276948" class="btn btn-primary">
+                <a href="tel:+966502890356" class="btn btn-primary">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
                     <span data-i18n="btn_call">Call Now</span>
                 </a>
-                <a href="https://wa.me/966547276948" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/966502890356" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
                     <span data-i18n="btn_whatsapp">WhatsApp</span>
                 </a>
@@ -261,6 +261,15 @@ Everything you need, in one place. A fresh choice for every home.</p>
             <h2 class="section-title text-center" data-i18n="faq_title">Frequently Asked Questions</h2>
             <div class="faq-list" role="list">
                 <div class="faq-item" role="listitem">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-0" id="faq-btn-0">
+                        <span class="faq-question-text" data-i18n="faq_0_q">Where is the supermarket located?</span>
+                        <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-answer-panel" id="faq-panel-0" role="region" aria-labelledby="faq-btn-0" aria-hidden="true">
+                        <div class="faq-answer-inner"><p data-i18n="faq_0_a">We are located near King Saud Medical City in Riyadh.</p></div>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
                     <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">
                         <span class="faq-question-text" data-i18n="faq_1_q">Do you offer home delivery?</span>
                         <span class="faq-icon-wrap" aria-hidden="true"><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
@@ -370,7 +379,7 @@ Everything you need, in one place. A fresh choice for every home.</p>
                         </div>
                         <div class="contact-text">
                             <h4 data-i18n="contact_phone">Phone</h4>
-                            <a href="tel:+966547276948">+966 54 727 6948</a>
+                            <a href="tel:+966502890356">+966 50 289 0356</a>
                         </div>
                     </div>
                     <!-- Email -->
@@ -406,12 +415,15 @@ Everything you need, in one place. A fresh choice for every home.</p>
                 </div>
                 
                 <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115858.9142721!2d46.745672!3d24.843657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efd2fbf00e4cd%3A0xcfd6dc771c990b7a!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <p class="map-location-note" data-i18n="location_near_note">Near King Saud Medical City</p>
+                    <div class="map-embed-wrap">
+                        <iframe
+                            title="Perfect Family store location on Google Maps"
+                            src="https://www.google.com/maps?q=24.630962%2C46.692184&amp;z=17&amp;hl=en&amp;output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </div>

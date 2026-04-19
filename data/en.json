@@ -38,6 +38,8 @@
   "feat_store_title": "3000+ Sqft Store",
   "feat_store_desc": "Comfortable shopping experience with wide aisles",
   "faq_title": "Frequently Asked Questions",
+  "faq_0_q": "Where is the supermarket located?",
+  "faq_0_a": "We are located near King Saud Medical City in Riyadh.",
   "faq_1_q": "Do you offer home delivery?",
   "faq_1_a": "Yes, we provide free home delivery on eligible orders.",
   "faq_2_q": "How long does delivery take?",
@@ -65,6 +67,7 @@
   "contact_timing": "Store Timings",
   "timing_text": "8:00 AM - 11:00 PM Daily",
   "location_title": "Our Location",
+  "location_near_note": "Near King Saud Medical City",
   "address": "123 Supermarket St, Riyadh, Saudi Arabia",
   "footer_text": "© 2026 Perfect Family Trading Company. All rights reserved."
 }

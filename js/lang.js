@@ -3,7 +3,7 @@
 const LANG_STORAGE_KEY = 'sitePreferredLang';
 
 /** Production origin (HTTPS, no trailing slash). Update if the primary domain changes. */
-const SITE_ORIGIN = 'https://perfectfamilytc.com';
+const SITE_ORIGIN = 'https://www.perfectfamilytc.com';
 
 /** Guards against out-of-order completion when language is switched quickly */
 let applyLangGeneration = 0;
@@ -125,7 +125,7 @@ function updateMobileLangButton(lang) {
 async function applySiteLanguage(lang) {
     const clean = lang === 'ar' ? 'ar' : 'en';
     const myGen = ++applyLangGeneration;
-    const jsonPath = `./data/${clean}.json`;
+    const jsonPath = `/data/${clean}.json`;
 
     const response = await fetch(jsonPath);
     if (!response.ok) throw new Error('Failed to load translations');

@@ -496,7 +496,7 @@ html[dir="rtl"] .category-scroll-content {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: url("../assets/images/background.jpeg") center / cover no-repeat;
+    background: url("/assets/images/background.jpeg") center / cover no-repeat;
 }
 
 .about::after {

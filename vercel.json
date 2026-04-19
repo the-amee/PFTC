@@ -3,8 +3,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.perfectfamilytc.com" }],
-      "destination": "https://perfectfamilytc.com/:path*",
+      "has": [{ "type": "host", "value": "perfectfamilytc.com" }],
+      "destination": "https://www.perfectfamilytc.com/:path*",
       "permanent": true
     }
   ],

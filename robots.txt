@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://perfectfamilytc.com/sitemap.xml
+Sitemap: https://www.perfectfamilytc.com/sitemap.xml

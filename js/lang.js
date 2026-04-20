@@ -1,6 +1,4 @@
-// lang.js — client-side i18n + localStorage persistence
-
-const LANG_STORAGE_KEY = 'sitePreferredLang';
+// lang.js — client-side i18n (initial language from URL: / = English, ar.html = Arabic)
 
 /** Production origin (HTTPS, no trailing slash). Update if the primary domain changes. */
 const SITE_ORIGIN = 'https://www.perfectfamilytc.com';
@@ -166,37 +164,18 @@ async function applySiteLanguage(lang) {
 
     applySeoFromData(data, clean);
 
-    try {
-        localStorage.setItem(LANG_STORAGE_KEY, clean);
-    } catch (e) {
-        /* ignore quota / private mode */
-    }
-
     updateMobileLangButton(clean);
     window.dispatchEvent(new CustomEvent('sitelanguagechanged', { detail: { lang: clean } }));
 }
 
 /**
- * Prefer last user choice from localStorage on both index and ar pages.
- * If unset: index defaults to English, ar.html defaults to Arabic.
+ * Initial language from the page URL only (each full load / refresh).
+ * English site (/) always starts in English; ar.html starts in Arabic.
+ * In-page toggles last until the next navigation or refresh.
  */
 function resolveInitialLang() {
     const path = window.location.pathname || '';
     const isArPage = /ar\.html$/i.test(path);
-
-    let stored = null;
-    try {
-        stored = localStorage.getItem(LANG_STORAGE_KEY);
-    } catch (e) {
-        /* ignore */
-    }
-
-    const validStored = stored === 'en' || stored === 'ar' ? stored : null;
-
-    if (validStored) {
-        return validStored;
-    }
-
     return isArPage ? 'ar' : 'en';
 }
 
@@ -213,5 +192,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.applySiteLanguage = applySiteLanguage;
-window.LANG_STORAGE_KEY = LANG_STORAGE_KEY;
 window.SITE_ORIGIN = SITE_ORIGIN;

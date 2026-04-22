@@ -367,16 +367,8 @@ html[dir="rtl"] .nav-links a::after {
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1;
     pointer-events: none;
-    box-shadow:
-        inset 0 0 90px 36px rgba(0, 0, 0, 0.38),
-        inset 0 0 180px 72px rgba(0, 0, 0, 0.18);
-    background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.42) 0%, transparent 40%),
-        linear-gradient(to top, rgba(0, 0, 0, 0.38) 0%, transparent 36%),
-        linear-gradient(to right, rgba(0, 0, 0, 0.28) 0%, transparent 28%),
-        linear-gradient(to left, rgba(0, 0, 0, 0.28) 0%, transparent 28%),
-        radial-gradient(ellipse 90% 80% at 50% 45%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.45) 100%),
-        linear-gradient(135deg, rgba(27, 67, 50, 0.42) 0%, rgba(45, 106, 79, 0.32) 100%);
+    box-shadow: none;
+    background: transparent;
 }
 
 .hero-content {
@@ -678,10 +670,12 @@ html[dir="rtl"] .category-scroll-content {
 
 /* IMAGE — only this layer moves on hover */
 .category-image-wrap img {
-    width: auto;
+    width: 100%;
     height: 100%;
     max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
+    object-position: center;
 
     position: relative;
     z-index: 1;

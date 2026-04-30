@@ -349,28 +349,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (productsModal && categoriesSection) {
-        const onCategoryTouchEnd = (event) => {
+        const TAP_MOVE_THRESHOLD_PX = 10;
+        const CLICK_SUPPRESS_AFTER_TOUCH_MS = 700;
+        let activeTouchGesture = null;
+        let lastTouchTapAt = 0;
+
+        const getEventTouch = (event) => {
+            if (event.changedTouches && event.changedTouches.length > 0) {
+                return event.changedTouches[0];
+            }
+            if (event.touches && event.touches.length > 0) {
+                return event.touches[0];
+            }
+            return null;
+        };
+
+        const onCategoryTouchStart = (event) => {
             const card = resolveCategoryCardFromEventTarget(event.target);
+            if (!card) {
+                activeTouchGesture = null;
+                return;
+            }
+            const touch = getEventTouch(event);
+            if (!touch) return;
+            activeTouchGesture = {
+                identifier: touch.identifier,
+                startX: touch.clientX,
+                startY: touch.clientY,
+                moved: false,
+                card,
+            };
+        };
+
+        const onCategoryTouchMove = (event) => {
+            if (!activeTouchGesture) return;
+            const touch = getEventTouch(event);
+            if (!touch || touch.identifier !== activeTouchGesture.identifier) return;
+
+            const dx = Math.abs(touch.clientX - activeTouchGesture.startX);
+            const dy = Math.abs(touch.clientY - activeTouchGesture.startY);
+            if (dx > TAP_MOVE_THRESHOLD_PX || dy > TAP_MOVE_THRESHOLD_PX) {
+                activeTouchGesture.moved = true;
+            }
+        };
+
+        const onCategoryTouchEnd = (event) => {
+            const touch = getEventTouch(event);
+            const card = activeTouchGesture?.card || resolveCategoryCardFromEventTarget(event.target);
             if (!card) return;
+            const sameTouch =
+                !activeTouchGesture ||
+                !touch ||
+                touch.identifier === activeTouchGesture.identifier;
+            const moved = activeTouchGesture?.moved === true;
+            activeTouchGesture = null;
+            if (!sameTouch || moved) return;
             // #region agent log
             fetch('http://127.0.0.1:7547/ingest/7f96b885-a692-499a-8f03-6bebaf38ccd5',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6f5c2d'},body:JSON.stringify({sessionId:'6f5c2d',location:'main.js:category-touchend-capture',message:'document capture touchend',data:{hypothesisId:'H5',key:card.getAttribute('data-category-key'),cancelable:event.cancelable},timestamp:Date.now(),runId:'capture-delegate'})}).catch(()=>{});
             // #endregion
             if (event.cancelable) {
                 event.preventDefault();
             }
+            lastTouchTapAt = Date.now();
             requestCategoryModalOpen(card);
         };
 
         const onCategoryClick = (event) => {
             const card = resolveCategoryCardFromEventTarget(event.target);
             if (!card) return;
+            // Ignore synthetic clicks that follow a touch tap on mobile.
+            if (Date.now() - lastTouchTapAt < CLICK_SUPPRESS_AFTER_TOUCH_MS) {
+                event.preventDefault();
+                return;
+            }
             // #region agent log
             fetch('http://127.0.0.1:7547/ingest/7f96b885-a692-499a-8f03-6bebaf38ccd5',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6f5c2d'},body:JSON.stringify({sessionId:'6f5c2d',location:'main.js:category-click-capture',message:'document capture click',data:{hypothesisId:'H6',key:card.getAttribute('data-category-key')},timestamp:Date.now(),runId:'capture-delegate'})}).catch(()=>{});
             // #endregion
             requestCategoryModalOpen(card);
         };
 
+        document.addEventListener('touchstart', onCategoryTouchStart, { capture: true, passive: true });
+        document.addEventListener('touchmove', onCategoryTouchMove, { capture: true, passive: true });
         document.addEventListener('touchend', onCategoryTouchEnd, { capture: true, passive: false });
+        document.addEventListener('touchcancel', () => {
+            activeTouchGesture = null;
+        }, { capture: true, passive: true });
         document.addEventListener('click', onCategoryClick, true);
 
         const exploreMoreBtn = document.getElementById('products-modal-explore');

@@ -123,7 +123,7 @@ function updateMobileLangButton(lang) {
 async function applySiteLanguage(lang) {
     const clean = lang === 'ar' ? 'ar' : 'en';
     const myGen = ++applyLangGeneration;
-    const jsonPath = `/data/${clean}.json`;
+    const jsonPath = new URL(`data/${clean}.json`, window.location.href).href;
 
     const response = await fetch(jsonPath);
     if (!response.ok) throw new Error('Failed to load translations');

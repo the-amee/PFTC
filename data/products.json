@@ -1,0 +1,50 @@
+{
+  "veg": [
+    { "nameKey": "prod_drumstick", "image": "assets/images/drumstick.png" },
+    { "nameKey": "prod_brinjal", "image": "assets/images/brinjal.png" },
+    { "nameKey": "prod_okra", "image": "assets/images/Okra.png" }
+  ],
+  "fruits": [
+    { "nameKey": "prod_banana", "image": "assets/images/banana.png" },
+    { "nameKey": "prod_mango", "image": "assets/images/mango.png" },
+    { "nameKey": "prod_pomegranate", "image": "assets/images/pomogranate.png" }
+  ],
+  "dairy": [
+    { "nameKey": "prod_milk", "image": "assets/images/Milk.png" },
+    { "nameKey": "prod_curd", "image": "assets/images/curd.png" },
+    { "nameKey": "prod_eggs", "image": "assets/images/egg-p3.png" }
+  ],
+  "bakery": [
+    { "nameKey": "prod_banana_chips", "image": "assets/images/banana-chips.webp" },
+    { "nameKey": "prod_sarkara_varatti", "image": "assets/images/sarkara_varatti.webp" },
+    { "nameKey": "prod_sliced_bread", "image": "assets/images/bread.avif" }
+  ],
+  "grocery": [
+    { "nameKey": "prod_haritham_rice", "image": "assets/images/haritham_rice.png" },
+    { "nameKey": "prod_ajmi_puttu_podi", "image": "assets/images/ajmi_puttuPodi.png" },
+    { "nameKey": "prod_eastern_rice", "image": "assets/images/eastern_rice.png" }
+  ],
+  "meat": [
+    { "nameKey": "prod_beef", "image": "assets/images/beef.png" },
+    { "nameKey": "prod_chicken", "image": "assets/images/chicken.png" },
+    { "nameKey": "prod_fish", "image": "assets/images/fish.png" }
+  ],
+  "personal": [
+    { "nameKey": "prod_lux_soap", "image": "assets/images/Lux.webp" },
+    { "nameKey": "prod_shower_gel", "image": "assets/images/Shower_Gel.png" },
+    { "nameKey": "prod_toothpaste", "image": "assets/images/Tooth_Paste.png" }
+  ],
+  "household": [
+    { "nameKey": "prod_detergent", "image": "assets/images/categories/householdblue_compressed.png" },
+    { "nameKey": "prod_tissue", "image": "assets/images/categories/householdblue_compressed.png" }
+  ],
+  "footwear": [
+    { "nameKey": "prod_slippers", "image": "assets/images/categories/footwear_compressed.png" },
+    { "nameKey": "prod_sandals", "image": "assets/images/categories/footwear_compressed.png" }
+  ],
+  "pet": [
+    { "nameKey": "prod_whiskas", "image": "assets/images/whiskas_new.png" },
+    { "nameKey": "prod_monello", "image": "assets/images/monello.webp" },
+    { "nameKey": "prod_friskies", "image": "assets/images/friskies.webp" }
+  ]
+}

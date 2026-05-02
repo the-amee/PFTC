@@ -215,9 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
         productsModal.classList.remove('is-closing');
         productsModal.classList.add('is-visible');
         productsModal.setAttribute('aria-hidden', 'false');
-        // #region agent log
-        fetch('http://127.0.0.1:7547/ingest/7f96b885-a692-499a-8f03-6bebaf38ccd5',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6f5c2d'},body:JSON.stringify({sessionId:'6f5c2d',location:'main.js:openProductsModal-visible',message:'modal is-visible set',data:{hypothesisId:'H4',activeKey:activeCategory&&activeCategory.key,hasIsVisible:productsModal.classList.contains('is-visible')},timestamp:Date.now(),runId:'direct-bind'})}).catch(()=>{});
-        // #endregion
 
         document.body.dataset.modalPrevOverflow = document.body.style.overflow || '';
         document.body.style.overflow = 'hidden';
@@ -342,12 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return card && categoriesSection.contains(card) ? card : null;
     };
 
-    if (!productsModal || !categoriesSection) {
-        // #region agent log
-        fetch('http://127.0.0.1:7547/ingest/7f96b885-a692-499a-8f03-6bebaf38ccd5',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6f5c2d'},body:JSON.stringify({sessionId:'6f5c2d',location:'main.js:category-modal-missing-dom',message:'modal or categories section missing',data:{hypothesisId:'A',hasProductsModal:!!productsModal,hasCategoriesSection:!!categoriesSection},timestamp:Date.now(),runId:'capture-delegate'})}).catch(()=>{});
-        // #endregion
-    }
-
     if (productsModal && categoriesSection) {
         const TAP_MOVE_THRESHOLD_PX = 10;
         const CLICK_SUPPRESS_AFTER_TOUCH_MS = 700;
@@ -404,9 +395,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const moved = activeTouchGesture?.moved === true;
             activeTouchGesture = null;
             if (!sameTouch || moved) return;
-            // #region agent log
-            fetch('http://127.0.0.1:7547/ingest/7f96b885-a692-499a-8f03-6bebaf38ccd5',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6f5c2d'},body:JSON.stringify({sessionId:'6f5c2d',location:'main.js:category-touchend-capture',message:'document capture touchend',data:{hypothesisId:'H5',key:card.getAttribute('data-category-key'),cancelable:event.cancelable},timestamp:Date.now(),runId:'capture-delegate'})}).catch(()=>{});
-            // #endregion
             if (event.cancelable) {
                 event.preventDefault();
             }
@@ -422,9 +410,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.preventDefault();
                 return;
             }
-            // #region agent log
-            fetch('http://127.0.0.1:7547/ingest/7f96b885-a692-499a-8f03-6bebaf38ccd5',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6f5c2d'},body:JSON.stringify({sessionId:'6f5c2d',location:'main.js:category-click-capture',message:'document capture click',data:{hypothesisId:'H6',key:card.getAttribute('data-category-key')},timestamp:Date.now(),runId:'capture-delegate'})}).catch(()=>{});
-            // #endregion
             requestCategoryModalOpen(card);
         };
 

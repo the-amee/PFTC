@@ -1,18 +1,18 @@
 {
   "veg": [
-    { "nameKey": "prod_drumstick", "image": "assets/images/drumstick.png" },
-    { "nameKey": "prod_brinjal", "image": "assets/images/brinjal.png" },
-    { "nameKey": "prod_okra", "image": "assets/images/Okra.png" }
+    { "nameKey": "prod_drumstick", "image": "assets/images/drumstick.webp" },
+    { "nameKey": "prod_brinjal", "image": "assets/images/brinjal.webp" },
+    { "nameKey": "prod_okra", "image": "assets/images/Okra.webp" }
   ],
   "fruits": [
-    { "nameKey": "prod_banana", "image": "assets/images/banana.png" },
-    { "nameKey": "prod_mango", "image": "assets/images/mango.png" },
-    { "nameKey": "prod_pomegranate", "image": "assets/images/pomogranate.png" }
+    { "nameKey": "prod_banana", "image": "assets/images/banana.webp" },
+    { "nameKey": "prod_mango", "image": "assets/images/mango.webp" },
+    { "nameKey": "prod_pomegranate", "image": "assets/images/pomogranate.webp" }
   ],
   "dairy": [
-    { "nameKey": "prod_milk", "image": "assets/images/Milk.png" },
-    { "nameKey": "prod_curd", "image": "assets/images/curd.png" },
-    { "nameKey": "prod_eggs", "image": "assets/images/egg-p3.png" }
+    { "nameKey": "prod_milk", "image": "assets/images/Milk.webp" },
+    { "nameKey": "prod_curd", "image": "assets/images/curd.webp" },
+    { "nameKey": "prod_eggs", "image": "assets/images/egg-p3.webp" }
   ],
   "bakery": [
     { "nameKey": "prod_banana_chips", "image": "assets/images/banana-chips.webp" },
@@ -20,19 +20,19 @@
     { "nameKey": "prod_sliced_bread", "image": "assets/images/bread.avif" }
   ],
   "grocery": [
-    { "nameKey": "prod_haritham_rice", "image": "assets/images/haritham_rice.png" },
-    { "nameKey": "prod_ajmi_puttu_podi", "image": "assets/images/ajmi_puttuPodi.png" },
-    { "nameKey": "prod_eastern_rice", "image": "assets/images/eastern_rice.png" }
+    { "nameKey": "prod_haritham_rice", "image": "assets/images/haritham_rice.webp" },
+    { "nameKey": "prod_ajmi_puttu_podi", "image": "assets/images/ajmi_puttuPodi.webp" },
+    { "nameKey": "prod_eastern_rice", "image": "assets/images/eastern_rice.webp" }
   ],
   "meat": [
-    { "nameKey": "prod_beef", "image": "assets/images/beef.png" },
-    { "nameKey": "prod_chicken", "image": "assets/images/chicken.png" },
-    { "nameKey": "prod_fish", "image": "assets/images/fish.png" }
+    { "nameKey": "prod_beef", "image": "assets/images/beef.webp" },
+    { "nameKey": "prod_chicken", "image": "assets/images/chicken.webp" },
+    { "nameKey": "prod_fish", "image": "assets/images/fish.webp" }
   ],
   "personal": [
     { "nameKey": "prod_lux_soap", "image": "assets/images/Lux.webp" },
-    { "nameKey": "prod_shower_gel", "image": "assets/images/Shower_Gel.png" },
-    { "nameKey": "prod_toothpaste", "image": "assets/images/Tooth_Paste.png" }
+    { "nameKey": "prod_shower_gel", "image": "assets/images/Shower_Gel.webp" },
+    { "nameKey": "prod_toothpaste", "image": "assets/images/Tooth_Paste.webp" }
   ],
   "household": [
     { "nameKey": "prod_detergent", "image": "assets/images/categories/householdblue_compressed.png" },
@@ -43,7 +43,7 @@
     { "nameKey": "prod_sandals", "image": "assets/images/categories/footwear_compressed.png" }
   ],
   "pet": [
-    { "nameKey": "prod_whiskas", "image": "assets/images/whiskas_new.png" },
+    { "nameKey": "prod_whiskas", "image": "assets/images/whiskas_new.webp" },
     { "nameKey": "prod_monello", "image": "assets/images/monello.webp" },
     { "nameKey": "prod_friskies", "image": "assets/images/friskies.webp" }
   ]

@@ -3,6 +3,16 @@
 :root {
     --color-primary: #1b4332;
     --color-primary-light: #2d6a4f;
+    /* Pastel chrome: fills, header text on light, wordmark on dark hero */
+    --color-accent-green: #52a447;
+    --color-accent-green-hover: #458339;
+    --color-pastel-green: #c8e6c9;
+    --color-pastel-green-hover: #a3d4b0;
+    --color-pastel-green-text: #2d5a45;
+    --color-pastel-green-wordmark: #3a6b55;
+    --color-pastel-green-hero: #b2dfdb;
+    --color-brand-light-green: var(--color-pastel-green);
+    --color-brand-light-green-hover: var(--color-pastel-green-hover);
     --color-bg-main: #f8f9fa; /* slightly more clean white/light gray */
     --color-bg-secondary: #fefdfb; /* light beige for sections */
     --color-white: #ffffff;
@@ -77,7 +87,7 @@ a {
     font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 40px;
-    color: var(--color-primary);
+    color: #111111;
 }
 
 .bg-white { background-color: var(--color-white); }
@@ -112,6 +122,16 @@ a {
     background-color: var(--color-primary-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
+}
+
+.hero .btn-primary {
+    background-color: var(--color-accent-green);
+    color: var(--color-white);
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--color-accent-green-hover);
+    color: var(--color-white);
 }
 
 .btn-outline {
@@ -163,7 +183,7 @@ a {
     padding: 16px 0;
     background: rgba(255, 255, 255, 0.48);
     border-bottom-color: rgba(255, 255, 255, 0.38);
-    color: var(--color-primary);
+    color: var(--color-pastel-green-text);
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.55),
         0 6px 24px rgba(0, 0, 0, 0.06);
@@ -226,7 +246,12 @@ a {
 }
 
 .header.scrolled .lang-switch-mobile {
-    background: rgba(27, 67, 50, 0.08);
+    background: rgba(0, 0, 0, 0.06);
+    color: #111111;
+}
+
+.header:not(.scrolled) .lang-switch-mobile {
+    color: #ffffff;
 }
 
 .lang-switch-mobile__icon {
@@ -256,6 +281,22 @@ a {
     white-space: nowrap;
     /* Pull wordmark tight against the mark (logo PNG includes padding) */
     margin-inline-start: -18px;
+}
+
+.header:not(.scrolled) .logo-wordmark {
+    color: #ffffff;
+}
+
+.header.scrolled .logo-wordmark {
+    color: var(--color-accent-green);
+}
+
+.header:not(.scrolled) .nav-links a {
+    color: #ffffff;
+}
+
+.header.scrolled .nav-links a {
+    color: #111111;
 }
 
 .logo img {
@@ -319,8 +360,16 @@ html[dir="rtl"] .nav-links a::after {
     background-color: currentColor;
     color: var(--color-white);
 }
+.header:not(.scrolled) .lang-toggle {
+    color: #ffffff;
+}
 .header:not(.scrolled) .lang-toggle:hover {
-    color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #111111;
+}
+
+.header.scrolled .lang-toggle {
+    color: #111111;
 }
 
 .menu-toggle {
@@ -485,31 +534,62 @@ html[dir="rtl"] .category-scroll-content {
 }
 
 /* -------------------------------------
-   ABOUT SECTION
+   ABOUT SECTION (scroll-driven reveal)
 ------------------------------------- */
-.about {
+.about-scroll-stage {
     position: relative;
+}
+
+.about-scroll-stage:not(.js-ready) {
+    min-height: 0;
+}
+
+.about-scroll-stage.js-ready {
+    --about-stage-extra: 280vh;
+    min-height: calc(100vh + var(--about-stage-extra));
+}
+
+.about-pin {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     isolation: isolate;
     overflow: hidden;
     text-align: center;
     background-color: var(--color-primary);
 }
 
-.about::before {
+.about-scroll-stage:not(.js-ready) .about-pin {
+    position: relative;
+    min-height: 0;
+}
+
+.about-pin::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: url("/assets/images/background.jpeg") center / cover no-repeat;
+    background: url("/assets/images/aboutUs_veggies.webp") center / cover no-repeat;
 }
 
-.about::after {
+.about-pin::after {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
     background: rgba(0, 0, 0, 0.5);
     pointer-events: none;
+}
+
+.about.about--reveal {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background: transparent;
+    overflow: visible;
 }
 
 .about-content {
@@ -519,12 +599,63 @@ html[dir="rtl"] .category-scroll-content {
 
 .about .section-title {
     color: #ffffff;
-    margin-bottom: 28px;
+    margin-bottom: clamp(1.25rem, 4vw, 2rem);
 }
 
-.about .about-text {
+.about-reveal-shell {
+    position: relative;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.about-scroll-stage.js-ready .about-reveal-fallback {
+    display: none;
+}
+
+.about-reveal {
+    text-align: center;
+}
+
+.about-line {
+    --line-pct: 0%;
+    font-size: clamp(1.05rem, 2.8vw, 1.28rem);
+    font-weight: 400;
+    line-height: 1.75;
+    margin: 0 auto 1rem;
+    max-width: 36em;
+    letter-spacing: 0.01em;
+    transition: color 0.05s linear;
+    color: rgba(255, 255, 255, 0.35);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.about-line:last-child {
+    margin-bottom: 0;
+}
+
+@supports (color: color-mix(in srgb, red, blue)) {
+    .about-line {
+        color: color-mix(
+            in srgb,
+            #ffffff var(--line-pct, 0%),
+            rgba(255, 255, 255, 0.32)
+        );
+    }
+}
+
+.about-scroll-stage.about-reduced-motion .about-text--static {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.94);
+    color: #ffffff;
+    line-height: 1.8;
+    white-space: pre-line;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    margin: 0 auto;
+    max-width: 36em;
+}
+
+.about-text.about-reveal-fallback {
+    font-size: 1.25rem;
+    color: #ffffff;
     max-width: 36em;
     margin: 0 auto;
     font-weight: 400;
@@ -827,7 +958,7 @@ button.category-card {
 .products-modal__title {
     margin: 0;
     padding-inline-end: 44px;
-    color: var(--color-primary);
+    color: #111111;
     font-size: clamp(1.15rem, 2.1vw, 1.6rem);
     font-weight: 700;
     letter-spacing: 0.01em;
@@ -1291,8 +1422,8 @@ html[dir="rtl"] .products-modal__close {
    FOOTER
 ------------------------------------- */
 .footer {
-    background: var(--color-primary);
-    color: rgba(255,255,255,0.7);
+    background: var(--color-accent-green);
+    color: rgba(255, 255, 255, 0.95);
     text-align: center;
     padding: 40px 0;
     font-size: 0.95rem;
@@ -1384,14 +1515,20 @@ html[dir="rtl"] .products-modal__close {
         font-size: 1.25rem;
         display: block;
     }
+
+    /* Drawer is white: keep links dark even when header is still over hero */
+    .header:not(.scrolled) .nav-right .nav-links a {
+        color: #111111;
+    }
     
     .nav-right.active .lang-toggle {
-        color: var(--color-primary);
+        color: #111111;
         border-color: currentColor;
     }
     
-    .header.scrolled .menu-toggle { color: var(--color-primary); }
-    .header:not(.scrolled) .menu-toggle.active { color: var(--color-primary); }
+    .header.scrolled .menu-toggle { color: #111111; }
+    .header:not(.scrolled) .menu-toggle { color: #ffffff; }
+    .header:not(.scrolled) .menu-toggle.active { color: #ffffff; }
     
     /* Layout Adjustments */
     .hero-title { font-size: 2.8rem; }
